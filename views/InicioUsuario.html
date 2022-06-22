@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Iniciar Sesion Study Place</title>
+  <title>Inicio Study Place</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -43,15 +43,14 @@
     <header id="header" class="fixed-top header-inner-pages">
       <div class="container d-flex align-items-center">
   
-        <h1 class="logo me-auto"><a href="index.html">Study Place</a></h1>
+        
         <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        <a href="" class="logo me-auto"><img src="assets/img/studyplacelogo.png" alt="" class="img-fluid"></a>
   
         <nav id="navbar" class="navbar">
           <ul>
-            <li><a class="nav-link scrollto" href="#hero">Inicio</a></li>
-            <li><a class="nav-link scrollto active" href="">Iniciar Sesión</a></li>
-            <li><a class="nav-link scrollto" href="">Registrarse</a></li>
+            <li><a class="nav-link scrollto active" href="">Inicio</a></li>
+            <li><a class="nav-link scrollto " href="">Cerrar Sesión</a></li>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
@@ -64,7 +63,7 @@
     <!-- ======= Breadcrumbs ======= -->
     <section id="breadcrumbs" class="breadcrumbs">
       <div class="container">
-        <h2>Inicio de Sesión</h2>
+        <h1>Bienvenido @nombre</h1>
 
       </div>
     </section><!-- End Breadcrumbs -->
@@ -73,25 +72,27 @@
       <div class="container">
         <div class="row">
             <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
-                <!-- Basado en nuestro trabajo grupal de Lab 05 y la PC2 de Claudia Pacori -->
-                <h3>Por favor ingresa los siguientes datos</h3>
-                <form action="" method="post">  <!-- Aqui tenemos que poner el method donde ira y que hara -->
-                    <table>
-                      <tbody>
-                        <tr>
-                            <td>Correo</td>
-                            <td><input type="text" name="email" /></td>
-                        </tr>
-                        <tr>
-                            <td>Contraseña</td>
-                            <td><input type="password" name="password" /></td>
-                        </tr>
-                      </tbody>
-                    </table>
-                </form>
+                <div class="row-lg-6 d-flex flex-row justify-content-center">
+                  <h2>¿Qué piso deseas visitar?</h2>
+                </div>
+                <!--Para anadir espacios: https://es.quora.com/C%C3%B3mo-puedo-agregar-el-espacio-entre-dos-botones-en-un-programa-HTML-b%C3%A1sico-->
+                <div style="padding: 30px 125px 30px 125px;"></div>
+                <!--Si quiero cambiar el tamano tengo que ir al .css-->
+                <div class="row-lg-6 d-flex flex-row justify-content-center">
+                  <a href="" class="btn-piso hover">Piso 11</a>
+                </div>
+                <div style="padding: 10px 125px 10px 125px;"></div>
+                <div class="row-lg-6 d-flex flex-row justify-content-center">
+                  <a href="" class="btn-piso hover">Piso 6</a>
+                </div>
+                <div style="padding: 10px 125px 10px 125px;"></div>
+                <div class="row-lg-6 d-flex flex-row justify-content-center">
+                  <a href="" class="btn-piso hover">Piso 1</a>
+                </div>
+                
             </div>
             <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-                <img src="assets/img/studyplace2.png" class="img-fluid animated" alt="">
+                <img src="assets/img/utec.jpg" class="img-fluid animated" alt="">
             </div>
         </div>
       </div>
