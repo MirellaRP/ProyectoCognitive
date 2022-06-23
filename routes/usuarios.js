@@ -14,4 +14,9 @@ router.get('/getusuario', function(req, res) {
     usuarios.list(req,res);
 });
 
+router.post('/findusuario', function(req, res) {
+    console.log("Llegue aqui /findusuario:")
+    usuarios.find(req,res);
+});
+
 module.exports = router;

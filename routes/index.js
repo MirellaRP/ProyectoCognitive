@@ -30,10 +30,19 @@ router.use (function (req,res,next) {
   next();
 });
 
-
 router.get('/registro',function(req,res){
   res.sendFile(path.resolve('views/Registrarse.html'));
 });
 
+// Anadido : Usuario normal
+router.use (function (req,res,next) {
+  console.log('/user' + req.method);
+  next();
+});
+
+
+router.get('/user',function(req,res){
+  res.sendFile(path.resolve('views/InicioUsuario.html'));
+});
 
 module.exports = router;
