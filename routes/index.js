@@ -40,9 +40,45 @@ router.use (function (req,res,next) {
   next();
 });
 
-
 router.get('/user',function(req,res){
   res.sendFile(path.resolve('views/InicioUsuario.html'));
 });
+
+// Anadido : Piso 1
+router.use (function (req,res,next) {
+  console.log('/user/piso1' + req.method);
+  next();
+});
+
+router.get('/user/piso1',function(req,res){
+  res.sendFile(path.resolve('views/InformacionPiso1.html'));
+});
+
+
+// Anadido : Usuario admin
+router.use (function (req,res,next) {
+  console.log('/admin' + req.method);
+  next();
+});
+
+
+router.get('/admin',function(req,res){
+  res.sendFile(path.resolve('views/InicioAdministrador.html'));
+});
+
+// Anadido : Reporte Usuarios
+router.use (function (req,res,next) {
+  console.log('/admin/reporteusuarios' + req.method);
+  next();
+});
+
+
+router.get('/admin/reporteusuarios',function(req,res){
+  res.sendFile(path.resolve('views/ReporteUsuarios.html'));
+});
+
+
+
+
 
 module.exports = router;
