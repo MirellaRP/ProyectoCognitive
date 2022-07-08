@@ -1,5 +1,6 @@
 const path = require('path');
 const Usuario = require('../models/usuarios');
+const fetch = require('node-fetch');
 
 exports.index = function (req, res) {
     res.sendFile(path.resolve('views/InicioUsuario.html'));
@@ -10,10 +11,21 @@ exports.create = function (req, res) {
     newUsuario.funcion=0;
     console.log(req.body);
     newUsuario.save(function (err) {
-            if(err) {
-            res.status(400).send('Unable to save user in database');
+        if(err) {
+                res.status(400).send('Unable to save user in database');
         } else {
-            res.redirect('/user');
+                // Obtenido de https://lenguajejs.com/javascript/peticiones-http/fetch/
+                // Para instalar bien fetch https://stackoverflow.com/questions/69087292/requirenode-fetch-gives-err-require-esm
+                // uso de fetch node https://stackabuse.com/making-http-requests-in-node-js-with-node-fetch/
+                //Obtenido de https://codepen.io/codefoxx/pen/yLzYOEz
+                //Obtenido de https://www.youtube.com/watch?v=WTHrtiMEjk0&ab_channel=codefoxx
+                //Obtenido de https://countapi.xyz/
+                const peticionusuarios = fetch("https://api.countapi.xyz/hit/proyectoiccusuarios/4ae8e48d-8c11-4c23-8300-d2512b317b22");
+                peticionusuarios.then(function(response) {
+                        console.log("Hice Update de Usuario")
+                });
+                res.redirect('/user');
+
         }
   });
 };
@@ -37,8 +49,25 @@ exports.find = function (req, res) {
                                 Usuario.findOne({email:req.body.email, password:req.body.password}).exec(function (err,usuario){
                                 console.log("Usuario: ", usuario)
                                 console.log("Usuario: ", usuario.nombre)
+                                console.log("funcion: ", usuario.funcion)
+
+                                if(usuario.funcion==1){
+                                        res.redirect('/admin');
+                                } else{
+                                        // Obtenido de https://lenguajejs.com/javascript/peticiones-http/fetch/
+                                        // Para instalar bien fetch https://stackoverflow.com/questions/69087292/requirenode-fetch-gives-err-require-esm
+                                        // uso de fetch node https://stackabuse.com/making-http-requests-in-node-js-with-node-fetch/
+                                        //Obtenido de https://codepen.io/codefoxx/pen/yLzYOEz
+                                        //Obtenido de https://www.youtube.com/watch?v=WTHrtiMEjk0&ab_channel=codefoxx
+                                        //Obtenido de https://countapi.xyz/
+                                        const peticionusuarios = fetch("https://api.countapi.xyz/hit/proyectoiccusuarios/4ae8e48d-8c11-4c23-8300-d2512b317b22");
+                                        peticionusuarios.then(function(response) {
+                                                console.log("Hice Update de Usuario")
+                                        });
+                                        res.redirect('/user');
+                                }
                                 // Buscar como pasar el nombre 
-                                res.redirect('/user');
+                                
                                 });
                         }
                 }

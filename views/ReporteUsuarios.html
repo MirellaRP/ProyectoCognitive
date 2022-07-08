@@ -16,6 +16,7 @@
   <link href="assets/img/studyplace2.png" rel="icon">
   <link href="assets/img/studyplace2.png" rel="apple-touch-icon">
 
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
@@ -52,8 +53,8 @@
   
         <nav id="navbar" class="navbar">
           <ul>
-            <li><a class="nav-link scrollto active" href="">Inicio</a></li>
-            <li><a class="nav-link scrollto " href="">Cerrar Sesión</a></li>
+            <li><a class="nav-link scrollto active" href="/admin">Inicio</a></li>
+            <li><a class="nav-link scrollto " href="/">Cerrar Sesión</a></li>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
@@ -78,11 +79,32 @@
             <h2 style="margin: 51px 60px 51px 60px;">Reporte de Usuarios de la aplicación:</h2>
           </div>
           <div class="col-lg-4 justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
-            <b class="btn-reporte">11</b>
+            <b class="btn-reporte" id="visitas"></b>
+            
+            <!--Script de API-->
+            <!--Script principalmente obtenido principalmente de https://www.youtube.com/watch?v=n8qlr2xpIYo&ab_channel=CODETOINFINITY-->
+            <script>
+              const numero = document.getElementById("visitas");
+              contarvisitas();
+              function contarvisitas() {
+                fetch('https://api.countapi.xyz/get/proyectoiccusuarios/4ae8e48d-8c11-4c23-8300-d2512b317b22')
+                  .then((res) => res.json())
+                  .then((res) => {
+                    numero.innerHTML = res.value;
+                  });
+              }
+              
+            </script>
+            <!--Tambien basado de https://codepen.io/codefoxx/pen/yLzYOEz-->
+            <!--Tambien basado de  https://www.youtube.com/watch?v=WTHrtiMEjk0&ab_channel=codefoxx-->
+            <!--Tambien basado de  https://countapi.xyz/-->  
+
+
+
           </div>
         </div>
         <div class="row pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
-          <a style="margin: 10px 60px 10px 60px;" href="" class="btn-usuarios hover">Lista de Usuarios</a>
+          <a style="margin: 10px 60px 10px 60px;" href="/admin/listausuarios" class="btn-usuarios hover">Lista de Usuarios</a>
 
         </div>
       </div>

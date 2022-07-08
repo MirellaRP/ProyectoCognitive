@@ -5,13 +5,16 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Piso 1 Study Place</title>
+  <title>Lista de Usuarios Study Place</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="/assets/img/studyplace2.png" rel="icon">
-  <link href="/assets/img/studyplace2.png" rel="apple-touch-icon">
+  <!-- Nota -->
+  <!-- Agregue esto porque las rutas no funcionaban cuando se hacia /admin/reporteusuario, y me base en el siguiente link para arreglarlo: -->
+  <!-- https://stackoverflow.com/questions/68642224/why-doesnt-the-css-work-on-certain-routes-->
+  <link href="assets/img/studyplace2.png" rel="icon">
+  <link href="assets/img/studyplace2.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -49,7 +52,7 @@
   
         <nav id="navbar" class="navbar">
           <ul>
-            <li><a class="nav-link scrollto " href="/user">Inicio</a></li>
+            <li><a class="nav-link scrollto active" href="/admin">Inicio</a></li>
             <li><a class="nav-link scrollto " href="/">Cerrar Sesión</a></li>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
@@ -63,7 +66,7 @@
     <!-- ======= Breadcrumbs ======= -->
     <section id="breadcrumbs" class="breadcrumbs">
       <div class="container">
-        <h1>Bienvenido @nombre</h1>
+        <h1>Bienvenido @Administrador</h1>
 
       </div>
     </section><!-- End Breadcrumbs -->
@@ -71,48 +74,15 @@
     <section class="inner-page">
       <div class="container">
         <div class="row">
-          <div class="col-lg-6 justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
-            <h4>Información actual del piso 1</h4>
-          </div>
-        </div>
-        <div class="row">
           <div class="col-lg-12 justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
-              <!--Aprendi margins y su uso https://es.quora.com/C%C3%B3mo-puedo-agregar-el-espacio-entre-dos-botones-en-un-programa-HTML-b%C3%A1sico-->
-              <b class="btn-desc">Temperatura</b>
-              <b class="btn-desc">Humedad</b>
-              <b class="btn-desc">Ruido Ambiental</b>
+            <h2 style="margin: 51px 60px 51px 60px;">Lista de Usuarios de la aplicación:</h2>
           </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12 justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
-            <!--Aprendi margins y su uso https://es.quora.com/C%C3%B3mo-puedo-agregar-el-espacio-entre-dos-botones-en-un-programa-HTML-b%C3%A1sico-->
-            <b class="btn-valores">@temperatura</b>
-            <b class="btn-valores">@humedad</b>
-            <b class="btn-valores">@ruido</b>
+          
         </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12 justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
-            <!--Aprendi margins y su uso https://es.quora.com/C%C3%B3mo-puedo-agregar-el-espacio-entre-dos-botones-en-un-programa-HTML-b%C3%A1sico-->
-            <img src="assets/img/temperatura.png" style="margin: 20px 146px 20px 146px ;" class="img-fluid animated" alt="">
-            <img src="assets/img/humedad.png"  style="margin: 20px 146px 20px 146px ;" class="img-fluid animated" alt="">
-            <img src="assets/img/ruido.png"  style="margin: 20px 146px 20px 146px ;" class="img-fluid animated" alt="">
-        </div>
-      </div>
-      <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="200">
-        <div class="col-lg-4" >
-          <b2 class="casual">Te recomendamos: <b2>
-        </div>
-        <div class="col-lg-8" >
-          <b class="btn-recomendacion">@recomendacion</b>
-        </div>        
-      </div>
-      <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="200">
-          <a href="/user/piso1/semana" class="btn-factores">¿Cómo han estado estos factores estos días?</a>
 
       </div>
     </section>
-    
+
 
   </main><!-- End #main -->
 
