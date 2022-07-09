@@ -24,6 +24,18 @@ router.get('/iniciosesion',function(req,res){
   res.sendFile(path.resolve('views/IniciarSesion.html'));
 });
 
+
+// Anadido : Inicio Sesion error
+router.use (function (req,res,next) {
+  console.log('/iniciosesionerror' + req.method);
+  next();
+});
+
+
+router.get('/iniciosesionerror',function(req,res){
+  res.sendFile(path.resolve('views/IniciarSesionError.html'));
+});
+
 // Anadido : Registro
 router.use (function (req,res,next) {
   console.log('/registro' + req.method);
@@ -166,7 +178,15 @@ router.get('/admin/sensores',function(req,res){
 
 
 
-
+//Error 404
+// Codigo obtenido de https://www.codegrepper.com/code-examples/javascript/how+to+make+a+404+page+nodejs
+router.use(function(req, res, next){
+  res.status(404);
+  if (req.accepts('html')) {
+    res.render('Error404', { url: req.url });
+    return;
+  }
+});
 
 
 module.exports = router;

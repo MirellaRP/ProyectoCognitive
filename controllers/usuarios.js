@@ -69,6 +69,10 @@ exports.find = function (req, res) {
                                 // Buscar como pasar el nombre 
                                 
                                 });
+                        } else {
+                        // Logica de mensajear cuando hay error basado en el laboratorio 2 de Claudia Pacori
+                        res.redirect('/iniciosesionerror');
+
                         }
                 }
       });

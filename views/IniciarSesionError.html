@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Registro Study Place</title>
+  <title>Iniciar Sesion Study Place</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -50,8 +50,8 @@
         <nav id="navbar" class="navbar">
           <ul>
             <li><a class="nav-link scrollto" href="/">Inicio</a></li>
-            <li><a class="nav-link scrollto" href="/iniciosesion">Iniciar Sesión</a></li>
-            <li><a class="nav-link scrollto active" href="/registro">Registrarse</a></li>
+            <li><a class="nav-link scrollto active" href="/iniciosesion">Iniciar Sesión</a></li>
+            <li><a class="nav-link scrollto" href="/registro">Registrarse</a></li>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
@@ -64,7 +64,7 @@
     <!-- ======= Breadcrumbs ======= -->
     <section id="breadcrumbs" class="breadcrumbs">
       <div class="container">
-        <h2>Regístrate</h2>
+        <h2>Inicio de Sesión</h2>
 
       </div>
     </section><!-- End Breadcrumbs -->
@@ -75,31 +75,24 @@
             <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
                 <!-- Basado en nuestro trabajo grupal de Lab 05 y la PC2 de Claudia Pacori y delivery-node-mongodb del profesor Jaime Farfan-->
                 <h3>Por favor ingresa los siguientes datos</h3>
-                <form action="/usuarios/addusuario" method="post">  <!-- Aqui tenemos que poner el method donde ira y que hara -->
+                <form action="/usuarios/findusuario" method="post">  <!-- Aqui tenemos que poner el method donde ira y que hara -->
                     <table>
-                        <tbody>
-                            <tr>
-                                <td>Nombre</td>
-                                <td><input type="text" name="nombre" /></td>
-                            </tr>
-                            <tr>
-                                <td>Apellido</td>
-                                <td><input type="text" name="apellido" /></td>
-                            </tr>
-                            <tr>
-                                <td>Correo</td>
-                                <td><input type="text" name="email" /></td>
-                            </tr>
-                            <tr>
-                                <td>Contraseña</td>
-                                <td><input type="password" name="password" /></td>
-                            </tr>
-                            <tr>
-                              <td colspan="2"><button class="inicio hover" type="submit">Registrar</button></td> <!--Boton Submit de delivery-node-mongodb + lab05-->
-                            </tr>
-                        </tbody>
+                      <tbody>
+                        <tr>
+                            <td>Correo</td>
+                            <td><input type="text" name="email" /></td>
+                        </tr>
+                        <tr>
+                            <td>Contraseña</td>
+                            <td><input type="password" name="password" /></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><button class="inicio hover" type="submit">Inicia Sesión</button></td> <!--Boton Submit de delivery-node-mongodb + lab05-->
+                        </tr>
+                      </tbody>
                     </table>
                 </form>
+                <b class="error">Correo o contraseña incorrectos. Por favor vuelva a intentar</b>
             </div>
             <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
                 <img src="assets/img/studyplace2.png" class="img-fluid animated" alt="">
@@ -107,6 +100,7 @@
         </div>
       </div>
     </section>
+
 
   </main><!-- End #main -->
 
