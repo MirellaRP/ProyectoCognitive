@@ -75,14 +75,45 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
-            <h2 style="margin: 51px 60px 51px 60px;">S de la aplicación:</h2>
+            <h2 style="margin: 51px 60px 51px 60px;">Sensores en la universidad:</h2>
           </div>
-        </div>
-        <div class="row pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+        
+          <div class="col-lg-12 justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+                      
+            <!--Basado de getpedido.html jfarfantecsup delivery-node-mongodb-->           
+            <!--Basado de https://getbootstrap.com/docs/4.0/content/tables/-->
+            <!--Basado en Lab06 Proy3 y mi laboratorio 4-->
+
+            <table class="table justify-content-center">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col">Piso</th>
+                  <th scope="col">Día y Hora</th>
+                  <th scope="col">Humedad</th>
+                  <th scope="col">Temperatura</th>
+                  <th scope="col">Sonido</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% modulos.forEach(function(modulo) { %>             
+                <tr>
+                  <th scope="row"><%= modulo.sensor %></th>
+                  <td><%= modulo.hora %></td>
+                  <td><%= modulo.humedad %></td>
+                  <td><%= modulo.temperatura %></td>
+                  <td><%= modulo.sonido %></td>
+                </tr>
+                <% }); %>
+              </tbody>
+            </table>
+
+            <!---->
+          </div>
 
         </div>
       </div>
     </section>
+
 
 
   </main><!-- End #main -->

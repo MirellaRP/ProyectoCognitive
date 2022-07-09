@@ -73,6 +73,9 @@
         <div class="row">
           <div class="col-lg-6 justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
             <h4>Información de la semana del piso 11</h4>
+            <p id="array1"><%= temparray %></p>
+            <p id="array2"><%= humarray %></p>
+            <p id="array3"><%= sonarray %></p>
           </div>
         </div>
         <div class="row">
@@ -101,7 +104,7 @@
                   labels: ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
                   datasets: [{
                       label: 'Temperatura (°C)',
-                      data: [23, 22, 23, 25, 22, 23],
+                      data: [21, 25, 19, 26, 22, 23],
                       backgroundColor: [
                           '0x386996',
                           '0x386996',
@@ -150,7 +153,7 @@
                 labels: ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
                 datasets: [{
                     label: 'Humedad relativa (%)',
-                    data: [23, 22, 23, 25, 22, 23],
+                    data: [90, 80, 75, 85, 69, 82],
                     backgroundColor: [
                         '0x386996',
                         '0x386996',
@@ -199,7 +202,7 @@
               labels: ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
               datasets: [{
                   label: 'Ruido Ambiental (db)',
-                  data: [23, 22, 23, 25, 22, 23],
+                  data: [50, 45, 20, 26, 22, 23],
                   backgroundColor: [
                       '0x386996',
                       '0x386996',
