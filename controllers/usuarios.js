@@ -72,7 +72,7 @@ exports.find = function (req, res) {
                         }
                 }
       });
-    };
+};
 
 
 
@@ -81,8 +81,41 @@ exports.list = function (req, res) {
                 if (err) {
                         return res.send(500, err);
                 }
-                res.render('getusuario', {
+                res.render('ListaUsuarios', {
                         usuarios: usuarios
              });
         });
 };
+
+
+/*Funciones de dar y quitar permisos*/
+
+/*Basado en Lab06 Proy3, mi laboratorio 4*/
+/*Tambien basado en https://www.geeksforgeeks.org/mongoose-findbyidandupdate-function/?ref=lbp*/
+/*Tambien basado en https://www.iteramos.com/pregunta/87709/deprecationwarning-collectionfindandmodify-esta-obsoleto-utilice-findoneandupdate-findoneandreplace-o-findoneanddelete-en-su-lugar*/
+exports.dpermiso = function(req, res) {
+        Usuario.findByIdAndUpdate( req.params.id, {$set: {funcion: 1}},{ new: true, useFindAndModify: false },).exec(function (err,usuario){
+                if (err) {
+                        return res.send(500, err);
+                }
+                console.log("Permisos dados con exito")
+                res.redirect('/usuarios/getusuario');
+        })
+};
+
+exports.qpermiso = function(req, res) {
+        Usuario.findByIdAndUpdate( req.params.id, {$set: {funcion: 0}},{ new: true, useFindAndModify: false },).exec(function (err,usuario){
+                if (err) {
+                        return res.send(500, err);
+                }
+                console.log("Permisos quitados con exito")
+                res.redirect('/usuarios/getusuario');
+        })
+};
+
+
+
+
+
+
+

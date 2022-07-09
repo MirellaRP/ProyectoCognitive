@@ -66,7 +66,7 @@
     <!-- ======= Breadcrumbs ======= -->
     <section id="breadcrumbs" class="breadcrumbs">
       <div class="container">
-        <h1>Bienvenido @Administrador</h1>
+        <h1>Bienvenido Administrador</h1>
 
       </div>
     </section><!-- End Breadcrumbs -->
@@ -77,9 +77,40 @@
           <div class="col-lg-12 justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
             <h2 style="margin: 51px 60px 51px 60px;">Lista de Usuarios de la aplicación:</h2>
           </div>
-          
-        </div>
+        
+          <div class="col-lg-12 justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+                      
+            <!--Basado de getpedido.html jfarfantecsup delivery-node-mongodb-->           
+            <!--Basado de https://getbootstrap.com/docs/4.0/content/tables/-->
+            <!--Basado en Lab06 Proy3 y mi laboratorio 4-->
 
+            <table class="table justify-content-center">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Apellido</th>
+                  <th scope="col">Funcion</th>
+                  <th scope="col">Dar Permisos</th>
+                  <th scope="col">Quitar Permisos</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% usuarios.forEach(function(usuario) { %>             
+                <tr>
+                  <th scope="row"><%= usuario.nombre %></th>
+                  <td><%= usuario.apellido %></td>
+                  <td><%= usuario.funcion %></td>
+                  <td><a href="/usuarios/dpermiso/<%= usuario._id %>">Dar Permiso</a></td>
+                  <td><a href="/usuarios/qpermiso/<%= usuario._id %>">Quitar Permiso</a></td>
+                </tr>
+                <% }); %>
+              </tbody>
+            </table>
+
+            <!---->
+          </div>
+
+        </div>
       </div>
     </section>
 

@@ -19,4 +19,19 @@ router.post('/findusuario', function(req, res) {
     usuarios.find(req,res);
 });
 
+/*Basado en Lab06 Proy3, mi laboratorio 4 Mirella Rivas*/
+
+router.get('/dpermiso/:id', function(req, res) {
+    console.log("Doy permiso")
+    usuarios.dpermiso(req,res);
+});
+
+/*Basado en Lab06 Proy3, mi laboratorio 4 Mirella Rivas*/
+router.get('/qpermiso/:id', function(req, res) {
+    console.log("Doy permiso")
+    usuarios.qpermiso(req,res);
+});
+
+
+
 module.exports = router;
